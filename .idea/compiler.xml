@@ -15,7 +15,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="hibernate_start" target="1.5" />
-      <module name="library_web_app" target="1.5" />
+      <module name="library_web_app" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
