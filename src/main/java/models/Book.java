@@ -59,7 +59,7 @@ public class Book {
     }
 
     public boolean isAvailableToBorrow() {
-        return this.borrower != null;
+        return this.borrower == null;
     }
 
 }
