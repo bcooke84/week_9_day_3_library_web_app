@@ -1,7 +1,9 @@
 package models;
 
-import java.util.HashSet;
+import javax.persistence.*;
 
+@Entity
+@Table(name="books")
 public class Book {
 
     private String title;
@@ -17,6 +19,7 @@ public class Book {
         this.borrower = borrower;
     }
 
+    @Column(name = "title")
     public String getTitle() {
         return title;
     }
@@ -24,7 +27,8 @@ public class Book {
     public void setTitle(String title) {
         this.title = title;
     }
-
+    @ManyToOne
+    @JoinColumn(name = "library_id", nullable = false)
     public Library getLibrary() {
         return library;
     }
@@ -33,6 +37,8 @@ public class Book {
         this.library = library;
     }
 
+    @ManyToOne
+    @JoinColumn(name = "borrower_id", nullable = false)
     public Borrower getBorrower() {
         return borrower;
     }
