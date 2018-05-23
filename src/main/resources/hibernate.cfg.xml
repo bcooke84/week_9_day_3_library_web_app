@@ -12,9 +12,9 @@
         <property name="connection.pool_size">1</property>
         <property name="show_sql">true</property>
 
-        <mapping class="models.library"/>
-        <mapping class="models.books"/>
-        <mapping class="models.borrower"/>
+        <mapping class="models.Library"/>
+        <mapping class="models.Books"/>
+        <mapping class="models.Borrower"/>
 
     </session-factory>
 </hibernate-configuration>
