@@ -6,6 +6,7 @@ import javax.persistence.*;
 @Table(name="books")
 public class Book {
 
+    private int id;
     private String title;
     private Library library;
     private Borrower borrower;
@@ -13,10 +14,20 @@ public class Book {
     public Book() {
     }
 
-    public Book(String title, Library library, Borrower borrower) {
+    public Book(String title, Library library) {
         this.title = title;
         this.library = library;
-        this.borrower = borrower;
+    }
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id")
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Column(name = "title")
@@ -46,4 +57,9 @@ public class Book {
     public void setBorrower(Borrower borrower) {
         this.borrower = borrower;
     }
+
+    public boolean isAvailableToBorrow() {
+        return this.borrower != null;
+    }
+
 }
